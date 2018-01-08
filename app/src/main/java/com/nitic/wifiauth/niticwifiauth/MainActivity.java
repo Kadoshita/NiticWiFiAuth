@@ -42,9 +42,9 @@ public class MainActivity extends AppCompatActivity {
             intent.setClassName("com.nitic.wifiauth.niticwifiauth", "com.nitic.wifiauth.niticwifiauth.SettingsActivity");
             startActivity(intent);
         }
-        final String script = "javascript: document.getElementById('user').value = '" + user + "';"
-                + "document.getElementById('pass').value = '" + pass + "';"
-                + "document.getElementById('sb').click();";
+        final String script = "javascript: document.getElementsByName('username')[0].value = '" + user + "';"
+                + "document.getElementsByName('password')[0].value = '" + pass + "';"
+                + "document.getElementsByName('Submit')[0].click();";
 
         AuthWebView=(WebView)findViewById(R.id.webView);
         AuthWebView.getSettings().setJavaScriptEnabled(true);
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        AuthWebView.loadUrl("http://192.168.4.1/login.gsp");
+        AuthWebView.loadUrl("https://kwlc.ichinoseki.ac.jp/login.html");
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
